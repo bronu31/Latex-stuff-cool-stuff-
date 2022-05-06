@@ -1,0 +1,75 @@
+\usepackage[T2A,T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{wasysym}
+\usepackage{mathtools}
+\usepackage{graphicx,wrapfig,lipsum}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{listings}   
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{titlesec}
+\usepackage{alltt}
+\usepackage{caption}
+\usepackage{longtable}
+\titlespacing\section{0pt}{1.5cm plus 0pt minus 0pt}{0pt plus 2pt minus 2pt}
+\renewcommand{\figurename}{Рисунок}
+\renewcommand\tablename{Таблица}
+\graphicspath{{pics/first}}
+
+\usepackage{scrextend}
+\DeclareCaptionLabelFormat{gostfigure}{Рисунок #2}
+\captionsetup[figure]{labelformat=gostfigure}
+
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+\textwidth=11cm
+\textheight=17cm
+\renewcommand{\qed}{}
+\newtheorem{theorem}{Теорема}
+\renewcommand{\headrulewidth}{1pt}
+
+\cfoot{}
+\fancyfoot[]{}
+\fancyhead[LE,RO]{\thepage}
+\pagestyle{fancy}
+
+
+
+
+\renewcommand{\thesection}{\arabic{section}}
+\usepackage[xindy]{imakeidx}
+\makeindex[program=texindy, options= -L russian -C utf8]
+\indexsetup{firstpagestyle=fancy}
+\renewcommand{\contentsname}{Оглавление}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\usepackage[symbol]{footmisc}
+\renewenvironment{thebibliography}[1]
+{\subsection*{\bibname}%
+    \list{\@biblabel{\@arabic\c@enumiv}}%
+    {\settowidth\labelwidth{\@biblabel{#1}}%
+        \leftmargin\labelwidth
+        \advance\leftmargin\labelsep
+        \@openbib@code
+        \usecounter{enumiv}%
+        \let\p@enumiv\@empty
+        \renewcommand\theenumiv{\@arabic\c@enumiv}}%
+    \sloppy
+    \clubpenalty4000
+    \@clubpenalty \clubpenalty
+    \widowpenalty4000%
+    \sfcode`\.\@m}
+{\def\@noitemerr
+    {\@latex@warning{Empty `thebibliography' environment}}%
+    \endlist}
+    
+    
+    \DeclareCaptionFormat{mplain}{#1#2\par \centering #3\par}
+\captionsetup[table]{format=mplain,
+justification=raggedleft,%
+labelsep=none,%
+singlelinecheck=false,%
+skip=3pt}
